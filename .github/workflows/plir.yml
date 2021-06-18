@@ -21,9 +21,10 @@ jobs:
         repository: openmrs/openmrs-plir-dockerized-setup.git
         path: openmrs-plir-dockerized-setup.git
     - name:  run plir setup 
-      run:   |
-                   ./run.sh        
-
+      run: |
+         chmod +x run.sh         
+         ./run.sh
+      shell: bash   
   # build-hie:
   #   needs: build-plir
 
@@ -53,6 +54,7 @@ jobs:
     - name: Checkout in hie automation tests
       uses: actions/checkout@master
       with:
+        ref: master
         repository: openmrs/hie-automation-tests.git
         path: hie-automation-tests.git
     - name:  run automation tests
