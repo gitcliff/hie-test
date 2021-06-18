@@ -22,7 +22,7 @@ jobs:
         path: openmrs-plir-dockerized-setup.git
     - name:  run plir setup 
       run:   |
-              chmod +x ./run.sh        
+                   ./run.sh        
 
   # build-hie:
   #   needs: build-plir
