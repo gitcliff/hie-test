@@ -21,9 +21,7 @@ jobs:
         repository: openmrs/openmrs-plir-dockerized-setup.git
         path: openmrs-plir-dockerized-setup.git
     - name:  run plir setup 
-      run:   |
-        shell: bash
-        working-directory: ./run.sh
+      run: sh ./run.sh
   # build-hie:
   #   needs: build-plir
 
