@@ -3,10 +3,10 @@ name: plir-github-actions
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches: 
-      - master
+      - main
   workflow_dispatch:
     
 
@@ -23,12 +23,12 @@ jobs:
       run:   |
               chmod +x ./run.sh        
 
-  build-hie:
-    needs: build-plir
+  # build-hie:
+  #   needs: build-plir
 
-    runs-on: ubuntu-latest
+  #   runs-on: ubuntu-latest
       
-    steps:
+    # steps:
     - name: Set up Python 3.7
       uses: actions/setup-python@v2
       with:
