@@ -48,7 +48,6 @@ jobs:
         pytest  
     - name: Set up behave
       run: pip install behave
-    steps:
     - name: Checkout in hie automation tests
       uses: actions/checkout@master
       with:
