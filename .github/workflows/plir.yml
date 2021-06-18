@@ -17,17 +17,16 @@ jobs:
     - name: Checkout in plir dockerised setup
       uses: actions/checkout@v2
       with:
-        ref: main
-        repository: openmrs/openmrs-plir-dockerized-setup.git
-        path: openmrs-plir-dockerized-setup.git
-    - name: Open PLIR Directory
-      run: |
-        ls   
+        # ref: main
+        repository: openmrs/openmrs-plir-dockerized-setup
+        # path: openmrs-plir-dockerized-setup
+    # - name: Open PLIR Directory
+    #   run: |
+    #     ls
+    #     cd openmrs-plir-dockerized-setup
     - name:  run plir setup 
       run:  |
-             chmod +x ./run.sh
-             sh ./run.sh
-      shell: bash       
+             ./run.sh      
        
   # build-hie:
   #   needs: build-plir
