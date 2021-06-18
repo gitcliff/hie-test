@@ -17,16 +17,10 @@ jobs:
     - name: Checkout in plir dockerised setup
       uses: actions/checkout@v2
       with:
-        # ref: main
         repository: openmrs/openmrs-plir-dockerized-setup
-        # path: openmrs-plir-dockerized-setup
-    # - name: Open PLIR Directory
-    #   run: |
-    #     ls
-    #     cd openmrs-plir-dockerized-setup
     - name:  run plir setup 
       run:  |
-             ./run.sh      
+             timeout 10m ./run.sh &      
        
   # build-hie:
   #   needs: build-plir
@@ -55,11 +49,9 @@ jobs:
     - name: Set up behave
       run: pip install behave
     - name: Checkout in hie automation tests
-      uses: actions/checkout@master
+      uses: actions/checkout@v2
       with:
-        ref: master
-        repository: openmrs/hie-automation-tests.git
-        path: hie-automation-tests.git
+        repository: openmrs/hie-automation-tests
     - name:  run automation tests
       run: behave --no-logcapture --include ./features/PLIR                   
     
