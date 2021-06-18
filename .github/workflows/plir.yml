@@ -46,6 +46,8 @@ jobs:
     # - name: Test with pytest
     #   run: |
     #     pytest  
+    - name: Set up requests module
+      run: pip3 install requests
     - name: Set up behave
       run: pip install behave
     - name: Checkout in hie automation tests
