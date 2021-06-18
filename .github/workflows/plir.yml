@@ -51,7 +51,7 @@ jobs:
     - name: Set up behave
       run: pip install behave
     - name: Checkout in hie automation tests
-      uses: actions/checkout@v2
+      uses: actions/checkout@master
       with:
         repository: openmrs/hie-automation-tests
     - name:  run automation tests
