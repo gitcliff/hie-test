@@ -20,7 +20,7 @@ jobs:
         repository: openmrs/openmrs-plir-dockerized-setup
     - name:  run plir setup 
       run:  |
-             nohup ./run.sh       
+             nohup ./run.sh &       
        
   # build-hie:
   #   needs: build-plir
