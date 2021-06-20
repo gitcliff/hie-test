@@ -1,36 +1,23 @@
 name: plir-github-actions
 
 on:
-  # push:
-  #   branches:
-  #     - main
-  # pull_request:
-  #   branches: 
-  #     - main
   workflow_dispatch:
     
 
 jobs:
-  build-plir:
+  build-plir and hie automation:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout in plir dockerised setup
       uses: actions/checkout@v2
       with:
-        repository: openmrs/openmrs-plir-dockerized-setup
+        repository: https://github.com/gitcliff/openmrs-plir-dockerized-setup
     - name:  run plir setup 
       run:  |
              ./run.sh & 
     - name: Sleep for 5 minutes 
       run: sleep 5m
       shell: bash         
-       
-  # build-hie:
-  #   needs: build-plir
-
-  #   runs-on: ubuntu-latest
-      
-    # steps:
     - name: Set up Python 3.7
       uses: actions/setup-python@v2
       with:
@@ -46,9 +33,6 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    # - name: Test with pytest
-    #   run: |
-    #     pytest  
     - name: Set up requests module
       run: pip3 install requests
     - name: Set up behave
@@ -56,7 +40,7 @@ jobs:
     - name: Checkout in hie automation tests
       uses: actions/checkout@master
       with:
-        repository: openmrs/hie-automation-tests
+        repository: https://github.com/gitcliff/hie-automation-tests
     - name:  run automation tests
       run: behave --no-logcapture --include ./features/PLIR                   
     
