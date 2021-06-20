@@ -8,9 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout in plir dockerised setup
-      uses: actions/checkout@main
+      uses: actions/checkout@v2
       with:
-        repository: openmrs/openmrs-plir-dockerized-setup
+        repository: gitcliff/openmrs-plir-dockerized-setup
         ref: plir2
     - name:  run plir setup 
       run:  |
