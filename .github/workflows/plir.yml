@@ -10,8 +10,8 @@ jobs:
     - name: Checkout in plir dockerised setup
       uses: actions/checkout@v2
       with:
-        repository: gitcliff/openmrs-plir-dockerized-setup
-        ref: plir2
+        repository: openmrs/openmrs-plir-dockerized-setup
+        ref: main
     - name:  run plir setup 
       run:  |
              ./run.sh & 
@@ -40,8 +40,8 @@ jobs:
     - name: Checkout in hie automation tests
       uses: actions/checkout@v2
       with:
-        repository: gitcliff/hie-automation-tests
-        ref: FM2-386
+        repository: openmrs/hie-automation-tests
+        ref: master
     - name:  run automation tests
       run: behave --no-logcapture --include ./features/PLIR                   
     
