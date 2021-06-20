@@ -41,7 +41,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: gitcliff/hie-automation-tests
-        ref: FM2:386
+        ref: FM2-386
     - name:  run automation tests
       run: behave --no-logcapture --include ./features/PLIR                   
     
