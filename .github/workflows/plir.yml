@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     
 jobs:
-  build-plir and hie automation:
+  build-plir:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout in plir dockerised setup
