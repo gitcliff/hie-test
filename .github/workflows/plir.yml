@@ -38,7 +38,7 @@ jobs:
     - name: Set up behave
       run: pip install behave
     - name: Checkout in hie automation tests
-      uses: actions/checkout@master
+      uses: actions/checkout@v2
       with:
         repository: gitcliff/hie-automation-tests
         ref: FM2:386
