@@ -1,6 +1,9 @@
 name: plir-github-actions
 
 on:
+
+  pull_request:
+    branches: [ master ]
   workflow_dispatch:
     
 jobs:
