@@ -10,7 +10,7 @@ jobs:
     - name: Checkout in plir dockerised setup
       uses: actions/checkout@v2
       with:
-        repository: openmrs/openmrs-plir-dockerized-setup
+        repository: https://github.com/gitcliff/openmrs-plir-dockerized-setup
         ref: plir2
     - name:  run plir setup 
       run:  |
